@@ -104,7 +104,7 @@ function Gallery() {
 
   return (
     <div
-      className="w-full sm:mx-auto bg-cover pt-16 bg-waveBg"
+      className="w-full sm:mx-auto bg-cover pt-16 bg-wave-background"
       id="Galeria"
     >
       <Heading heading="Galeria" />

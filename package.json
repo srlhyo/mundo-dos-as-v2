@@ -1,7 +1,7 @@
 {
   "name": "mundo",
   "version": "0.0.0",
-  "homepage": "https://LailaL88.github.io/our-world",
+  "homepage": ".",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
@@ -18,7 +18,7 @@
     "react-scroll": "^1.8.4"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^1.0.0",
+    "@vitejs/plugin-react": "1.0.8",
     "autoprefixer": "^10.4.0",
     "gh-pages": "^3.2.3",
     "tailwindcss": "^2.2.19",
