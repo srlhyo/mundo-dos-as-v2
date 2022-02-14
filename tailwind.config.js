@@ -5,6 +5,15 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      animation: {
+        'spin-slow': 'spin 3s linear 4s 3',
+        expand : 'expand 3s linear 2s 3'
+      },
+      keyframes: {
+        expand: {
+          '0%, 100%': {transform: 'scale(1.3)'},
+        }
+      },
       backgroundImage: {
           img1:
           "url('./images/img-1.jpeg')",

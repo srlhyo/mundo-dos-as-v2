@@ -16,7 +16,7 @@ function Nav() {
   }
   return (
     <nav className="bg-pink-light flex flex-row items-center px-4 sm:px-14 py-4 justify-between">
-      <img className="w-14" src={logo} alt="Logo" />
+      <img className="w-14 animate-pulse" src={logo} alt="Logo" />
       <ul className="text-xl hidden lg:block">
         <li className="inline mr-10 hover:text-white cursor-pointer">
           <Link

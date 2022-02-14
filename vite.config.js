@@ -14,5 +14,3 @@ export default defineConfig({
   plugins: [react()],
   base: `${ASSET_URL}/girls/`
 })
-
-let x = 12;

@@ -5,8 +5,19 @@ import hosts from "../images/hosts.svg";
 import globe from "../images/globe.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBolt } from "@fortawesome/free-solid-svg-icons";
+import mundoAs from "../videos/mundo-as.mp4";
 
 function Header() {
+  const [vodeoOpen, setVideoOpen] = React.useState(false);
+
+  function openVideoMenu() {
+    setVideoOpen(true);
+  }
+
+  function closeVideoMenu() {
+    setVideoOpen(false);
+  }
+  
   return (
     <header>
       <Nav />
@@ -16,13 +27,31 @@ function Header() {
         </div>
         <div className="self-start pt-10 sm:pt-16 text-center" id="Home">
           <Heading heading="O MUNDO DOS A'S" />
-          <a
-            className="rounded-full py-3 px-4 2xl:py-6 2xl:px-9 bg-lightyellow inline-block mt-8 text-xl"
-            href="#"
-          >
-            See our promotional video{" "}
-            <FontAwesomeIcon className="ml-4" icon={faBolt} />
-          </a>
+
+
+          {vodeoOpen === false ? (
+            <button
+              className="rounded-full py-3 px-4 2xl:py-6 2xl:px-9 bg-lightyellow inline-block mt-8 text-xl"
+              onClick={openVideoMenu}
+            >
+              See our promotional video{" "}
+              <FontAwesomeIcon className="ml-4" icon={faBolt} />
+            </button>
+  
+          ) : (
+            <div className="lg:hidden fixed top-0 right-0 w-3/4 h-screen bg-white z-10 bg-opacity-95 flex flex-col justify-center items-center">
+              <div id="video relative">
+                <video src={mundoAs} controls></video>
+                <span
+                  className="cursor-pointer absolute top-5 text-3xl font-extrabold"
+                  onClick={closeVideoMenu}
+                >
+                  X
+                </span>
+              </div>
+            </div>
+          )}
+
         </div>
         <div className="w-full xl:w-1/3">
           <img
