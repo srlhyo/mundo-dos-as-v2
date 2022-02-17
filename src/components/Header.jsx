@@ -17,17 +17,17 @@ function Header() {
   function closeVideoMenu() {
     setVideoOpen(false);
   }
-  
+
   return (
     <header>
       <Nav />
+      <h1>hellooooo</h1>
       <div className="bg-palepink xl:flex flex-row items-end justify-around pt-10 pb-6 h-2/6">
         <div className="hidden xl:block">
           <img src={hosts} alt="people" />
         </div>
         <div className="self-start pt-10 sm:pt-16 text-center" id="Home">
           <Heading heading="O MUNDO DOS A'S" />
-
 
           {vodeoOpen === false ? (
             <button
@@ -37,7 +37,6 @@ function Header() {
               See our promotional video{" "}
               <FontAwesomeIcon className="ml-4" icon={faBolt} />
             </button>
-  
           ) : (
             <div className="lg:hidden fixed top-0 right-0 w-3/4 h-screen bg-white z-10 bg-opacity-95 flex flex-col justify-center items-center">
               <div id="video relative">
@@ -51,7 +50,6 @@ function Header() {
               </div>
             </div>
           )}
-
         </div>
         <div className="w-full xl:w-1/3">
           <img
