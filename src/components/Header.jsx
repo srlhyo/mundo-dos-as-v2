@@ -29,7 +29,7 @@ function Header() {
           <Heading heading="O MUNDO DOS A'S" />
 
 
-          {vodeoOpen === false ? (
+          {vodeoOpen == false ? (
             <button
               className="rounded-full py-3 px-4 2xl:py-6 2xl:px-9 bg-lightyellow inline-block mt-8 text-xl"
               onClick={openVideoMenu}
@@ -39,11 +39,11 @@ function Header() {
             </button>
   
           ) : (
-            <div className="lg:hidden fixed top-0 right-0 w-3/4 h-screen bg-white z-10 bg-opacity-95 flex flex-col justify-center items-center">
-              <div id="video relative">
-                <video src={mundoAs} controls></video>
+            <div className="fixed top-0 right-0 w-full h-screen bg-white z-20 bg-opacity-95 flex flex-col justify-center items-center">
+              <div className="w-8/12" id="video relative">
+                <video  src={mundoAs} controls></video>
                 <span
-                  className="cursor-pointer absolute top-5 text-3xl font-extrabold"
+                  className="cursor-pointer absolute top-5 right-10 text-3xl font-extrabold"
                   onClick={closeVideoMenu}
                 >
                   X
