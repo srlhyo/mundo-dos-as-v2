@@ -7,7 +7,7 @@ import Footer from "./Footer";
 
 function App() {
   return (
-    <div className="font-schoolbell">
+    <div className="font-schoolbell" id="pageTop">
       <Header />
       <Section />
       <Gallery />

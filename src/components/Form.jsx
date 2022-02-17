@@ -41,7 +41,7 @@ function Form() {
           rows="5"
         ></textarea>
         <input
-          className="bg-golden m-2 px-8 py-2 text-xl cursor-pointer"
+          className="bg-golden m-2 px-8 py-2 text-xl cursor-pointer animate-pulse"
           type="submit"
           value="Enviar"
         />

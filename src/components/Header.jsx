@@ -5,7 +5,9 @@ import hosts from "../images/hosts.svg";
 import globe from "../images/globe.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBolt } from "@fortawesome/free-solid-svg-icons";
+import { faAngleUp } from "@fortawesome/free-solid-svg-icons";
 import mundoAs from "../videos/mundo-as.mp4";
+import { Link, animateScroll as scroll } from "react-scroll";
 
 function Header() {
   const [vodeoOpen, setVideoOpen] = React.useState(false);
@@ -17,10 +19,33 @@ function Header() {
   function closeVideoMenu() {
     setVideoOpen(false);
   }
+
+  React.useEffect(() => {
+    document.getElementById("up-icon").style.opacity = 0;
+    window.addEventListener('scroll', listenToScroll);
+  }, []);
+
+  function listenToScroll() {
+    if (document.body.scrollTop || document.documentElement.scrollTop > window.innerHeight) {
+      document.getElementById("up-icon").style.opacity = 1;
+    } else {
+      document.getElementById("up-icon").style.opacity = 0;
+    }
+  }
   
   return (
     <header>
       <Nav />
+       <Link
+            to="pageTop"
+            activeClass="active"
+            spy={true}
+            smooth={true}
+            duration={500}
+          >
+            <FontAwesomeIcon className="fixed right-4 bottom-6 z-20 text-3xl cursor-pointer" icon={faAngleUp} id="up-icon"/>
+          </Link>
+      
       <div className="bg-palepink xl:flex flex-row items-end justify-around pt-10 pb-6 h-2/6">
         <div className="hidden xl:block">
           <img src={hosts} alt="people" />
@@ -31,16 +56,16 @@ function Header() {
 
           {vodeoOpen == false ? (
             <button
-              className="rounded-full py-3 px-4 2xl:py-6 2xl:px-9 bg-lightyellow inline-block mt-8 text-xl"
+              className="rounded-full py-3 px-4 2xl:py-6 2xl:px-9 bg-lightyellow inline-block mt-8 text-xl "
               onClick={openVideoMenu}
             >
               See our promotional video{" "}
-              <FontAwesomeIcon className="ml-4" icon={faBolt} />
+              <FontAwesomeIcon className="ml-4 animate-bounce" icon={faBolt} />
             </button>
   
           ) : (
             <div className="fixed top-0 right-0 w-full h-screen bg-white z-20 bg-opacity-95 flex flex-col justify-center items-center">
-              <div className="w-8/12" id="video relative">
+              <div className="md:w-8/12 m-2" id="video relative">
                 <video  src={mundoAs} controls></video>
                 <span
                   className="cursor-pointer absolute top-5 right-10 text-3xl font-extrabold"
